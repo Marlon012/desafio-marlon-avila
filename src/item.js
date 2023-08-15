@@ -1,4 +1,6 @@
-export default class item{ // coleta todas ás informações dos itens
+// Essa classe coleta todas ás informações dos itens.
+
+export default class Item{ 
 
     codigo;
     descricao;
@@ -15,4 +17,5 @@ export default class item{ // coleta todas ás informações dos itens
         this.descricao=descricao;
         this.valor=valor;
     }
+
 }
