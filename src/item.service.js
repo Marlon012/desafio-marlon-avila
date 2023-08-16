@@ -30,11 +30,26 @@ export default class ItemService {
                 let vetorItem = itemAtual.split(',');
                 let cardapio = new Cardapio();
                 cardapio.lista.forEach(function (cardapioItemAtual) {
-                    if (vetorItem[0] === cardapioItemAtual.codigo && cardapioItemAtual.extra) { 
-                       let itemExtra = item.filter(i=>i.includes(cardapioItemAtual.extra));
-                       if(!itemExtra.lemgth){
-                        mensagem = 'Item extra não pode ser pedido sem o principal';
-                       }
+                    if (vetorItem[0] === cardapioItemAtual.codigo && cardapioItemAtual.extra) {
+                        let itemExtra = item.filter(i => i.includes(cardapioItemAtual.extra));
+                        if (!itemExtra.length) {
+                            mensagem = 'Item extra não pode ser pedido sem o principal';
+                        }
+                    }
+                });
+            });
+        }
+        if (!mensagem.length) {
+            item.forEach(function (itemAtual) {
+                let vetorItem = itemAtual.split(',');
+                let cardapio = new Cardapio();
+                cardapio.lista.forEach(function (cardapioItemAtual, index) {
+                    let itemEncontrado = false;
+                    if (vetorItem[0] === cardapioItemAtual.codigo) {
+                        itemEncontrado = true;
+                    }
+                    if (index === cardapio.lista.length - 1 && !itemEncontrado) {
+                        mensagem = 'Item inválido!';
                     }
                 });
             });
