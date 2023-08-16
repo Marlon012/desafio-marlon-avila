@@ -6,16 +6,14 @@ export default class Item {
     descricao;
     valor;
     quantidade;
+    extra;
 
-    constructor(codigo, quantidade) {
+    constructor(codigo, quantidade, descricao, valor, extra) {
         this.codigo = codigo;
         this.quantidade = quantidade;
-    }
-    constructor(codigo, descricao, valor, quantidade) {
         this.codigo = codigo;
-        this.quantidade = quantidade;
         this.descricao = descricao;
         this.valor = valor;
+        this.extra = extra;
     }
-
 }

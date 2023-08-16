@@ -8,6 +8,7 @@ class CaixaDaLanchonete {
         let resultado = itemService.validarItem(itens);
 
         return resultado;
+      
     }
 
 }
