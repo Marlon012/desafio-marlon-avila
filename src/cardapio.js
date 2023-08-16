@@ -1,3 +1,5 @@
+// A lista foi criada por não conseguir fazer uma integração com banco de dados.
+
 export default class Cardapio {
 
     lista = [

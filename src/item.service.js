@@ -43,8 +43,8 @@ export default class ItemService {
             item.forEach(function (itemAtual) {
                 let vetorItem = itemAtual.split(',');
                 let cardapio = new Cardapio();
+                let itemEncontrado = false;
                 cardapio.lista.forEach(function (cardapioItemAtual, index) {
-                    let itemEncontrado = false;
                     if (vetorItem[0] === cardapioItemAtual.codigo) {
                         itemEncontrado = true;
                     }

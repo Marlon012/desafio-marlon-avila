@@ -1,4 +1,6 @@
 import ItemService from "./item.service";
+import FormaPagamentoService from "./forma-pagamento-service";
+import FormaDePagamento from "./forma-de-pagamento";
 
 class CaixaDaLanchonete {
 
@@ -6,9 +8,11 @@ class CaixaDaLanchonete {
 
         let itemService = new ItemService();
         let resultado = itemService.validarItem(itens);
-
+        let formaPagamentoService = new FormaPagamentoService();
+        if (!resultado) {
+            resultado = formaPagamentoService.validarFormaPagamento(metodoDePagamento);
+        }
         return resultado;
-      
     }
 
 }
